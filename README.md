@@ -1,3 +1,32 @@
+# s3-yc
+
+## RU
+Скрипт обновлен для работы с [Яндекс Облаком](https://cloud.yandex.ru/)
+
+### Установка скрипта
+```bash
+# Получение файла:
+wget https://raw.githubusercontent.com/clientapi/s3-yc/master/build/s3-get -O /usr/local/bin/yc-get && chmod +x /usr/local/bin/yc-get
+
+# Загрузка файла:
+wget https://raw.githubusercontent.com/clientapi/s3-yc/master/build/s3-put -O /usr/local/bin/yc-put && chmod +x /usr/local/bin/yc-put
+
+# Удаление файла:
+wget https://raw.githubusercontent.com/clientapi/s3-yc/master/build/s3-delete -O /usr/local/bin/yc-delete && chmod +x /usr/local/bin/yc-delete
+```
+### Использование
+
+```bash
+# Получение файла:
+yc-get -k {ACCESS_KEY_ID} -s {SECRET_ACCESS_KEY} /{bucketname}/{filename} > {filename}
+
+# Загрузка файла:
+yc-put -k {ACCESS_KEY_ID} -s {SECRET_ACCESS_KEY} -T /{path}/{filename} /{bucketname}/{filename}
+
+# Удаление файла;
+yc-delete -k {ACCESS_KEY_ID} -s {SECRET_ACCESS_KEY} /{bucketname}/{filename}
+```
+
 # s3-bash4
 
 _s3-bash4_ is a small collection of _Bash_ scripts to do simple interaction with _Amazon S3_ using [_AWS Signature Version 4_](http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html). The advantage of using _s3-bash4_ is that it's extremly lightweight and easy to use. No need to setup _Python_, _Java_, _Ruby_ and co.
